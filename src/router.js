@@ -1,11 +1,13 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
-import AboutView from './pages/AboutView.vue'
-import HomeView from './pages/HomeView.vue'
+import AboutPage from './pages/AboutPage.vue'
+import CallbackPage from './pages/CallbackPage.vue'
+import HomePage from './pages/HomePage.vue'
 
 const routes = [
-  { path: '/', component: HomeView },
-  { path: '/about', component: AboutView },
+  { path: '/', component: HomePage },
+  { path: '/about', component: AboutPage },
+  { path: '/auth-callback', component: CallbackPage },
 ]
 
 const router = createRouter({

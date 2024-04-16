@@ -2,13 +2,13 @@
 export default {
   methods: {
     goToAbout() {
-      this.$router.push('/about')
+      this.$router.push('/')
     },
   },
 }
 </script>
 
 <template>
-  <h2>HomeView</h2>
-  <button @click="goToAbout">Go to About</button>
+  <h2>callback</h2>
+  <button @click="goToAbout">Go to Home</button>
 </template>

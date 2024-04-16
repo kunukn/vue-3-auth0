@@ -18,8 +18,8 @@
     "_create-cert-files-external": "mkcert -key-file ./.cert/key.pem -cert-file ./.cert/cert.pem 10.99.53.189"
   },
   "engines": {
-    "npm": ">=9.0.0",
-    "node": ">=18.0.0"
+    "npm": ">=9",
+    "node": ">=18"
   },
   "dependencies": {
     "vue": "^3.4.21"
