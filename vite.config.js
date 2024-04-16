@@ -1,5 +1,5 @@
 import { defineConfig } from 'vite'
-import fs from 'fs';
+import fs from 'fs'
 import vue from '@vitejs/plugin-vue'
 
 // https://vitejs.dev/config/
@@ -11,4 +11,11 @@ export default defineConfig({
     },
   },
   plugins: [vue()],
+  resolve: {
+    alias: {
+      src: '/src',
+      '~': '/',
+      '@': '/src',
+    },
+  },
 })
