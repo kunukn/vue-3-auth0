@@ -1,0 +1,37 @@
+{
+  "name": "vue-3-auth0",
+  "private": true,
+  "version": "0.0.1",
+  "type": "module",
+  "scripts": {
+    "create-env": "node create-env-file.js",
+    "dev": "vite",
+    "start": "cross-env VITE_SOME_KEY=123 vite --port 8082",
+    "start-host": "cross-env VITE_SOME_KEY=123 vite --host --port 8082",
+    "build": "vite build",
+    "preview": "vite preview",
+    "//install-mkcert": "https://github.com/FiloSottile/mkcert",
+    "install-mkcert": "mkcert -install localhost",
+    "create-cert-files-in-folder": "rm -rf .cert && mkdir .cert && npm run _create-cert-files",
+    "_create-cert-files": "mkcert -key-file ./.cert/key.pem -cert-file ./.cert/cert.pem localhost",
+    "create-cert-files-in-folder-external": "rm -rf .cert && mkdir .cert && npm run _create-cert-files-external",
+    "_create-cert-files-external": "mkcert -key-file ./.cert/key.pem -cert-file ./.cert/cert.pem 10.99.53.189"
+  },
+  "engines": {
+    "npm": ">=9.0.0",
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "vue": "^3.4.21"
+  },
+  "devDependencies": {
+    "@auth0/auth0-vue": "^2.3.3",
+    "@vitejs/plugin-vue": "^5.0.4",
+    "concurrently": "^8.2.2",
+    "cross-env": "^7.0.3",
+    "sass": "^1.75.0",
+    "vite": "^5.2.0",
+    "vue-router": "^4.3.0"
+  },
+  "resolutions": {}
+}
