@@ -13,7 +13,7 @@ export default {
         loginWithRedirect({
           appState: {
             targetUrl: self.location.pathname,
-            mode: LoginMode.login,
+            mode: 'login',
           },
           acr_values: 'Consent_Accepted',
           authorizationParams: {
@@ -44,15 +44,9 @@ export default {
 
 <template>
   <h2>Login</h2>
-  <button @click="login">Log in</button>
-  <button @click="createAccount">Create account</button>
-  <div>
-    <p v-if="isLoading">Checking authentication...</p>
-    <p v-else-if="isAuthenticated">You are logged in as {{ user.name }}</p>
-    <p v-else>You are not logged in</p>
-  </div>
-  <div>
-    {{ user }}
+  <div class="buttons">
+    <button @click="login">Log in</button>
+    <button @click="createAccount">Create account</button>
   </div>
 </template>
 
@@ -61,5 +55,10 @@ button {
   border: 1px solid;
   padding: 1rem;
   margin-block-end: 1rem;
+}
+
+.buttons {
+  gap: 1rem;
+  display: flex;
 }
 </style>
