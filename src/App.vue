@@ -4,8 +4,9 @@
     <strong>Current route path:</strong> {{ $route.fullPath }}
   </p>
   <nav>
-    <RouterLink to="/">Go to Home</RouterLink>
-    <RouterLink to="/about">Go to About</RouterLink>
+    <RouterLink to="/">Home</RouterLink>
+    <RouterLink to="/login">Login</RouterLink>
+    <RouterLink to="/about">About</RouterLink>
   </nav>
   <main>
     <RouterView />

@@ -1,11 +1,13 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
-import AboutPage from './pages/AboutPage.vue'
-import CallbackPage from './pages/CallbackPage.vue'
-import HomePage from './pages/HomePage.vue'
+import AboutPage from '@/pages/AboutPage.vue'
+import CallbackPage from '@/pages/CallbackPage.vue'
+import HomePage from '@/pages/HomePage.vue'
+import LoginPage from '@/pages/LoginPage.vue'
 
 const routes = [
   { path: '/', component: HomePage },
+  { path: '/login', component: LoginPage },
   { path: '/about', component: AboutPage },
   { path: '/auth-callback', component: CallbackPage },
 ]

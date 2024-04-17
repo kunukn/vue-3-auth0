@@ -11,13 +11,19 @@ const search = computed({
   },
   set(search) {
     router.replace({ query: { search } })
-  }
+  },
 })
 </script>
 
 <template>
   <h2>About</h2>
-  <label>
-    Search: <input v-model.trim="search" maxlength="20">
-  </label>
+  <label> Search: <input v-model.trim="search" maxlength="20" /> </label>
 </template>
+
+<style scoped>
+input {
+  border: 1px solid;
+  padding: 1rem;
+  margin-block-end: 1rem;
+}
+</style>
