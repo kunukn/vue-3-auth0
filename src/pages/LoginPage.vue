@@ -52,13 +52,11 @@ export default {
 
 <style scoped>
 button {
-  border: 1px solid;
-  padding: 1rem;
   margin-block-end: 1rem;
 }
 
 .buttons {
-  gap: 1rem;
   display: flex;
+  gap: 1rem;
 }
 </style>

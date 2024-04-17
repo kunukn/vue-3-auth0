@@ -28,6 +28,7 @@ export default {
     <RouterLink v-if="!isAuthenticated" to="/login">Login</RouterLink>
     <RouterLink to="/">Home</RouterLink>
     <RouterLink to="/about">About</RouterLink>
+    <RouterLink v-if="isAuthenticated" to="/api">API</RouterLink>
     <div class="logout">
       <button v-if="isAuthenticated" @click="clickLogout">Logout</button>
     </div>

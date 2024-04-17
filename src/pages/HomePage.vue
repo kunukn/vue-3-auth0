@@ -1,7 +1,7 @@
 <script>
 export default {
-  setup() {
-    return {}
+  mounted() {
+    console.log('home page')
   },
 }
 </script>

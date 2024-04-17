@@ -1,11 +1,10 @@
 <script>
 export default {
-  setup() {
-    return {}
+  mounted() {
+    console.log('callback page')
   },
 }
 </script>
-
 
 <template>
   <h2>callback</h2>
