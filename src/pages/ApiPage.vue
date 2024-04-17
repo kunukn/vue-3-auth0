@@ -18,11 +18,11 @@
   </div>
 </template>
 
-<script lang="ts">
+<script>
 import { useAuth0 } from '@auth0/auth0-vue'
 import { ref } from 'vue'
-
-const localBaseBusinessApi = 'https://localhost:44394'
+import axios from 'axios'
+import { get, localBaseApi } from '@/setupApi'
 
 export default {
   setup() {
@@ -32,15 +32,23 @@ export default {
       apiMessage,
       async callApi() {
         const accessToken = await auth0.getAccessTokenSilently()
+        console.log({ accessToken })
         try {
-          const response = await fetch(`${localBaseBusinessApi}/v2/users/me`, {
+          let url = `${localBaseApi}/v2/users/me`
+           url = `${localBaseApi}/appsettings`
+
+          let r = await axios.get(url, {
             headers: {
               Authorization: `Bearer ${accessToken}`,
+              DEBUG_CURRENT_DATE: '',
+              SPA_VERSION: '123',
+              Accept: 'application/json',
+              'Content-Type': 'application/json',
             },
           })
-          const data = await response.json()
-          apiMessage.value = data
-        } catch (e: any) {
+
+          apiMessage.value = r.data
+        } catch (e) {
           apiMessage.value = `Error: the server responded with '${e.response.status}: ${e.response.statusText}'`
         }
       },
