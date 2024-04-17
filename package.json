@@ -6,8 +6,8 @@
   "scripts": {
     "create-env": "node create-env-file.js",
     "dev": "vite",
-    "start": "cross-env VITE_SOME_KEY=123 vite --port 3000",
-    "start-host": "cross-env VITE_SOME_KEY=123 vite --host --port 3000",
+    "start": "cross-env VITE_SOME_KEY=123 vite --port 8082",
+    "start-host": "cross-env VITE_SOME_KEY=123 vite --host --port 8082",
     "build": "vite build",
     "preview": "vite preview",
     "//install-mkcert": "https://github.com/FiloSottile/mkcert",

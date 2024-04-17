@@ -13,6 +13,7 @@
 
     <div>
       <h6>Result</h6>
+      <p>{{ token }}</p>
       <pre>{{ apiMessage }}</pre>
     </div>
   </div>
@@ -28,14 +29,16 @@ export default {
   setup() {
     const auth0 = useAuth0()
     const apiMessage = ref()
+    const token = ref()
     return {
       apiMessage,
+      token,
       async callApi() {
         const accessToken = await auth0.getAccessTokenSilently()
-        console.log({ accessToken })
+        token.value = accessToken
         try {
           let url = `${localBaseApi}/v2/users/me`
-           url = `${localBaseApi}/appsettings`
+           // url = `${localBaseApi}/appsettings`
 
           let r = await axios.get(url, {
             headers: {
