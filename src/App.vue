@@ -11,7 +11,9 @@ export default {
       user,
       clickLogout: () => {
         logout({
-          returnTo: `${self.location.origin} + '/login'`,
+          logoutParams: {
+            returnTo: self.location.origin + '/login',
+          },
         })
       },
     }
