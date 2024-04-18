@@ -28,14 +28,14 @@ import { useAuth0 } from '@auth0/auth0-vue'
 import { ref } from 'vue'
 import axios from 'axios'
 
-export const localBaseApi = 'https://localhost:44394'
+export const baseApiUrl = import.meta.env.VITE_BASE_API_URL
 
 export default {
   setup() {
     const auth0 = useAuth0()
     const apiMessage = ref('')
     const token = ref('')
-    const urlText = ref('appsettings')
+    const urlText = ref('/appsettings')
     return {
       apiMessage,
       token,
@@ -46,7 +46,7 @@ export default {
         const accessToken = await auth0.getAccessTokenSilently()
         token.value = accessToken
         try {
-          const url = `${localBaseApi}/v2/users/me`
+          const url = `${baseApiUrl}/v2/users/me`
           const response = await axios.get(url, {
             headers: {
               Authorization: `Bearer ${accessToken}`,
@@ -65,7 +65,7 @@ export default {
         const accessToken = await auth0.getAccessTokenSilently()
         token.value = accessToken
         try {
-          const url = `${localBaseApi}/${urlText.value}`
+          const url = `${baseApiUrl}${urlText.value}`
           const response = await axios.get(url, {
             headers: {
               Authorization: `Bearer ${accessToken}`,

@@ -24,7 +24,7 @@ function createAuthConfig() {
     authorizationParams: {
       scope: import.meta.env.VITE_AUTH0_SCOPE,
       audience: import.meta.env.VITE_AUTH0_AUDIENCE,
-      redirect_uri: `${self.location.origin}/${
+      redirect_uri: `${self.location.origin}${
         import.meta.env.VITE_AUTH0_CALLBACK_URL
       }`,
     },
