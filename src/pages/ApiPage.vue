@@ -40,26 +40,6 @@ export default {
       apiMessage,
       token,
       urlText,
-      async callAppSettingsApi() {
-        apiMessage.value = ''
-        token.value = ''
-        const accessToken = await auth0.getAccessTokenSilently()
-        token.value = accessToken
-        try {
-          const url = `${localBaseApi}/appsettings`
-
-          const response = await axios.get(url, {
-            headers: {
-              Authorization: `Bearer ${accessToken}`,
-              DEBUG_CURRENT_DATE: '',
-            },
-          })
-
-          apiMessage.value = response.data
-        } catch (e) {
-          apiMessage.value = `Error: the server responded with '${e.response.status}: ${e.response.statusText}'`
-        }
-      },
       async callMeApi() {
         apiMessage.value = ''
         token.value = ''

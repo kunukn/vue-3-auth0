@@ -26,3 +26,7 @@ npm run create-cert-files-in-folder # Creates the localhost certificates.
 
 npm start # Starts the app using https.
 ```
+
+## Thoughts
+
+You can use `'@auth0/auth0-spa-js'` and create a Vue wrapper if `@auth0/auth0-vue` is lacking req. features.
