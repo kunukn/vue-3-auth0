@@ -10,7 +10,7 @@
       <div class="buttons">
         <button @click="callMeApi">Me</button>
       </div>
-      <input type="text" v-model="urlText" />
+      <input type="text" v-model="urlText" @keyup.enter="callUrl" />
       <button @click="callUrl">GET</button>
     </div>
 
@@ -84,9 +84,20 @@ export default {
 </script>
 
 <style scoped>
+pre {
+  font-size: 14px;
+  margin-bottom: 1rem;
+}
+
 .buttons {
   display: flex;
   gap: 1rem;
   margin-bottom: 1rem;
+}
+
+.token {
+  padding-top: 16px;
+  word-break: break-all;
+  font-size: 14px;
 }
 </style>

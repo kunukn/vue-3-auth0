@@ -27,8 +27,8 @@ export default {
   <nav>
     <RouterLink v-if="!isAuthenticated" to="/login">Login</RouterLink>
     <RouterLink to="/">Home</RouterLink>
-    <RouterLink to="/about">About</RouterLink>
     <RouterLink v-if="isAuthenticated" to="/api">API</RouterLink>
+    <RouterLink to="/about">About</RouterLink>
     <div class="logout">
       <button v-if="isAuthenticated" @click="clickLogout">Logout</button>
     </div>
@@ -58,5 +58,9 @@ button {
 
 .logout {
   margin-left: auto;
+}
+
+pre {
+  font-size: 14px;
 }
 </style>
