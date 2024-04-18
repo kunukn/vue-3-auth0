@@ -8,9 +8,10 @@
         the API's audience value.
       </p>
       <div class="buttons">
-        <button @click="callAppSettingsApi">AppSettings</button>
         <button @click="callMeApi">Me</button>
       </div>
+      <input type="text" v-model="urlText" />
+      <button @click="callUrl">GET</button>
     </div>
 
     <div>
@@ -32,11 +33,13 @@ export const localBaseApi = 'https://localhost:44394'
 export default {
   setup() {
     const auth0 = useAuth0()
-    const apiMessage = ref()
-    const token = ref()
+    const apiMessage = ref('')
+    const token = ref('')
+    const urlText = ref('appsettings')
     return {
       apiMessage,
       token,
+      urlText,
       async callAppSettingsApi() {
         apiMessage.value = ''
         token.value = ''
@@ -76,6 +79,25 @@ export default {
           apiMessage.value = `Error: the server responded with '${e.response.status}: ${e.response.statusText}'`
         }
       },
+      async callUrl() {
+        apiMessage.value = ''
+        token.value = ''
+        const accessToken = await auth0.getAccessTokenSilently()
+        token.value = accessToken
+        try {
+          const url = `${localBaseApi}/${urlText.value}`
+          const response = await axios.get(url, {
+            headers: {
+              Authorization: `Bearer ${accessToken}`,
+              DEBUG_CURRENT_DATE: '',
+            },
+          })
+
+          apiMessage.value = response.data
+        } catch (e) {
+          apiMessage.value = `Error: the server responded with '${e.response.status}: ${e.response.statusText}'`
+        }
+      },
     }
   },
 }
@@ -85,5 +107,6 @@ export default {
 .buttons {
   display: flex;
   gap: 1rem;
+  margin-bottom: 1rem;
 }
 </style>
