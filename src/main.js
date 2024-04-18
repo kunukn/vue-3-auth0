@@ -21,13 +21,15 @@ function createAuthConfig() {
     domain: import.meta.env.VITE_AUTH0_DOMAIN,
     domainUrl: import.meta.env.VITE_AUTH0_DOMAIN_URL,
     clientId: import.meta.env.VITE_AUTH0_CLIENT_ID,
-    redirectUri: `${self.location.origin}/${
-      import.meta.env.VITE_AUTH0_CALLBACK_URL
-    }`,
-    scope: import.meta.env.VITE_AUTH0_SCOPE,
-    audience: import.meta.env.VITE_AUTH0_AUDIENCE,
     cacheLocation: 'localstorage',
     useRefreshTokens: true,
     useRefreshTokensFallback: true,
+    authorizationParams: {
+      scope: import.meta.env.VITE_AUTH0_SCOPE,
+      audience: import.meta.env.VITE_AUTH0_AUDIENCE,
+      redirect_uri: `${self.location.origin}/${
+        import.meta.env.VITE_AUTH0_CALLBACK_URL
+      }`,
+    },
   }
 }
