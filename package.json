@@ -6,8 +6,8 @@
   "scripts": {
     "create-env": "node create-env-file.js",
     "dev": "vite",
-    "start": "cross-env VITE_SOME_KEY=123 vite --port 8082",
-    "start-host": "cross-env VITE_SOME_KEY=123 vite --host --port 8082",
+    "start": "cross-env VITE_SOME_KEY=123 vite --port 3000",
+    "start-host": "cross-env VITE_SOME_KEY=123 vite --host --port 3000",
     "build": "vite build",
     "preview": "vite preview",
     "//install-mkcert": "https://github.com/FiloSottile/mkcert",
@@ -25,6 +25,7 @@
     "vue": "^3.4.21"
   },
   "devDependencies": {
+    "@auth0/auth0-spa-js": "^2.1.3",
     "@auth0/auth0-vue": "^2.3.3",
     "@vitejs/plugin-vue": "^5.0.4",
     "axios": "^1.6.8",
