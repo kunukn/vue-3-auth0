@@ -50,7 +50,6 @@ export default {
           const response = await axios.get(url, {
             headers: {
               Authorization: `Bearer ${accessToken}`,
-              DEBUG_CURRENT_DATE: '',
             },
           })
 
@@ -69,7 +68,6 @@ export default {
           const response = await axios.get(url, {
             headers: {
               Authorization: `Bearer ${accessToken}`,
-              DEBUG_CURRENT_DATE: '',
             },
           })
 
