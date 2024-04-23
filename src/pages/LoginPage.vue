@@ -12,13 +12,12 @@ export default {
       login: () => {
         loginWithRedirect({
           appState: {
-            targetUrl: self.location.pathname,
+            targetUrl: self.location.pathname, // Take me there after login.
             mode: 'login',
           },
-          acr_values: 'Consent_Accepted',
           authorizationParams: {
             acr_values: 'Consent_Accepted',
-            redirect_uri: `${self.location.origin}?uiMode=login`,
+            redirect_uri: `${self.location.origin}?uiMode=login`, // These query strings are custom for me.
             ui_locales: 'en',
           },
         })
@@ -28,10 +27,9 @@ export default {
           appState: {
             mode: 'signup',
           },
-          acr_values: 'Consent_Accepted',
           authorizationParams: {
             acr_values: 'Consent_Accepted',
-            redirect_uri: `${self.location.origin}/auth-callback?uiMode=signup`,
+            redirect_uri: `${self.location.origin}/auth-callback?uiMode=signup`, // These query strings are custom for me.
             screen_hint: 'signup',
             ui_locales: 'en',
           },

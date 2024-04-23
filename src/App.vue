@@ -46,8 +46,11 @@ export default {
   <div>
     <p>Is logged in: {{ isAuthenticated }}</p>
     <p>Is loading: {{ isLoading }}</p>
+    <p>User:</p>
     <pre>{{ user }}</pre>
   </div>
+  <hr />
+  <p>Config:</p>
   <pre>{{ config }} </pre>
 </template>
 
