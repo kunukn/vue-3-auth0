@@ -28,9 +28,9 @@ export default {
             mode: 'signup',
           },
           authorizationParams: {
-            acr_values: 'Consent_Accepted',
+            acr_values: 'Consent_Accepted', // Custom thing for me, you properly don't need this.
             redirect_uri: `${self.location.origin}/auth-callback?uiMode=signup`, // These query strings are custom for me.
-            screen_hint: 'signup',
+            screen_hint: 'signup', // https://auth0.com/docs/authenticate/login/auth0-universal-login/universal-login-vs-classic-login/universal-experience#signup
             ui_locales: 'en',
           },
         })
