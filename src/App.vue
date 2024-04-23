@@ -26,6 +26,7 @@ export default {
   <h1>Vue 3 + Auth0 app</h1>
   <p class="id-info">domain: {{ domain }}</p>
   <p><strong>Current route path:</strong> {{ $route.fullPath }}</p>
+  <p>Ensure the url match the one configured in Auth0 settings, i.e. correct port.</p>
   <nav>
     <RouterLink v-if="!isAuthenticated" to="/login">Login</RouterLink>
     <RouterLink to="/">Home</RouterLink>

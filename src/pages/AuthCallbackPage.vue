@@ -1,7 +1,7 @@
 <script>
 export default {
   mounted() {
-    console.log('callback page')
+    console.log('auth callback page')
   },
 }
 </script>
