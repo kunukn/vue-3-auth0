@@ -11,7 +11,7 @@ App Demo
 
 ## Prerequisite
 
-- You need to have an Auth0 app.
+- You need to have an Auth0 app with Universal login experience.
 - The `.env` must be updated with values from the Auth0 settings.
 - Ensure your backend is running if API fetch is wanted.
 
