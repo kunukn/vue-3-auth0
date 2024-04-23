@@ -34,5 +34,10 @@
     "vite": "^5.2.9",
     "vue-router": "^4.3.1"
   },
-  "resolutions": {}
+  "resolutions": {},
+  "description": "Vue 3 Auth0 demo app",
+  "keywords": [
+    "vue",
+    "auth0"
+  ]
 }
