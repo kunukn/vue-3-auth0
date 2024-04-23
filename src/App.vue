@@ -9,6 +9,7 @@ export default {
       isLoading,
       isAuthenticated,
       user,
+      domain: import.meta.env.VITE_AUTH0_DOMAIN,
       clickLogout: () => {
         logout({
           logoutParams: {
@@ -23,6 +24,7 @@ export default {
 
 <template>
   <h1>Vue 3 + Auth0 app</h1>
+  <p class="id-info">domain: {{ domain }}</p>
   <p><strong>Current route path:</strong> {{ $route.fullPath }}</p>
   <nav>
     <RouterLink v-if="!isAuthenticated" to="/login">Login</RouterLink>

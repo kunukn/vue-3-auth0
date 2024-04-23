@@ -9,6 +9,7 @@ Playground for Vue 3 + Auth0
 
 - You need to have an Auth0 app.
 - The `.env` must be updated with values from the Auth0 settings.
+- Ensure your backend is running if API fetch is wanted.
 
 ## Install steps:
 
@@ -20,12 +21,34 @@ npm install
 npm run create-env # creates a boilerplate .env file
 # Update the .env file with your Auth0 config data.
 
-npm run install-mkcert # Done once per OS, skip if has been done for your OS.
+npm run install-mkcert # Done with your normal OS account. Done once per OS, skip if has been done for your OS.
 
+# Works with Bash shell
 npm run create-cert-files-in-folder # Creates the localhost certificates.
 
-npm start # Starts the app using https.
+# Ensure your backend is running if API fetch is wanted.
+
+npm start # Starts the app using https. Done with your normal OS account.
 ```
+
+
+# Auth setup
+
+https://auth0.com/
+
+Login or create an account.
+
+![Create a new SPA application](./wiki/images/create-app-spa.png)
+
+![url-setup-spa](./wiki/images/url-setup-spa.png)
+
+![new-api.png](./wiki/images/new-api.png)
+
+![applications-updated](./wiki/images/applications-updated.png)
+
+![my-app-authorized](./wiki/images/my-app-authorized.png)
+
+![login](./wiki/images/login.png)
 
 ## Thoughts
 

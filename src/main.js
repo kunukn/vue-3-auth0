@@ -16,7 +16,7 @@ app.mount('#app')
 function createAuthConfig() {
   return {
     domain: import.meta.env.VITE_AUTH0_DOMAIN,
-    domainUrl: import.meta.env.VITE_AUTH0_DOMAIN_URL,
+    domainUrl: `https://${import.meta.env.VITE_AUTH0_DOMAIN}`,
     clientId: import.meta.env.VITE_AUTH0_CLIENT_ID,
     cacheLocation: 'localstorage',
     useRefreshTokens: true,
