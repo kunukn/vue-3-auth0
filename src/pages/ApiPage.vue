@@ -7,9 +7,6 @@
         external API using an access token, and the API will validate it using
         the API's audience value.
       </p>
-      <div class="buttons">
-        <button @click="callMeApi">Me</button>
-      </div>
       <input type="text" v-model="urlText" @keyup.enter="callUrl" />
       <button @click="callUrl">GET</button>
     </div>
@@ -40,24 +37,6 @@ export default {
       apiMessage,
       token,
       urlText,
-      async callMeApi() {
-        apiMessage.value = ''
-        token.value = ''
-        const accessToken = await auth0.getAccessTokenSilently()
-        token.value = accessToken
-        try {
-          const url = `${baseApiUrl}/v2/users/me`
-          const response = await axios.get(url, {
-            headers: {
-              Authorization: `Bearer ${accessToken}`,
-            },
-          })
-
-          apiMessage.value = response.data
-        } catch (e) {
-          apiMessage.value = `Error: the server responded with '${e.response.status}: ${e.response.statusText}'`
-        }
-      },
       async callUrl() {
         apiMessage.value = ''
         token.value = ''

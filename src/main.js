@@ -13,7 +13,7 @@ const app = createApp(App).use(createAuth0(auth0Config)).use(router)
 
 app.mount('#app')
 
-function createAuthConfig() {
+export function createAuthConfig() {
   return {
     domain: import.meta.env.VITE_AUTH0_DOMAIN,
     domainUrl: `https://${import.meta.env.VITE_AUTH0_DOMAIN}`,

@@ -5,6 +5,10 @@ Playground for Vue 3 + Auth0
 
 # Getting started
 
+App Demo
+
+![app demo](./wiki/images/app-demo.png)
+
 ## Prerequisite
 
 - You need to have an Auth0 app.

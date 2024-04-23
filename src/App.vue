@@ -1,5 +1,6 @@
 <script>
 import { useAuth0 } from '@auth0/auth0-vue'
+import { createAuthConfig } from './main.js'
 
 export default {
   setup() {
@@ -9,6 +10,7 @@ export default {
       isLoading,
       isAuthenticated,
       user,
+      config: createAuthConfig(),
       domain: import.meta.env.VITE_AUTH0_DOMAIN,
       clickLogout: () => {
         logout({
@@ -26,12 +28,14 @@ export default {
   <h1>Vue 3 + Auth0 app</h1>
   <p class="id-info">domain: {{ domain }}</p>
   <p><strong>Current route path:</strong> {{ $route.fullPath }}</p>
-  <p>Ensure the url match the one configured in Auth0 settings, i.e. correct port.</p>
+  <p>
+    Ensure the url match the one configured in Auth0 settings, i.e. correct
+    port.
+  </p>
   <nav>
     <RouterLink v-if="!isAuthenticated" to="/login">Login</RouterLink>
     <RouterLink to="/">Home</RouterLink>
     <RouterLink v-if="isAuthenticated" to="/api">API</RouterLink>
-    <RouterLink to="/about">About</RouterLink>
     <div class="logout">
       <button v-if="isAuthenticated" @click="clickLogout">Logout</button>
     </div>
@@ -44,6 +48,7 @@ export default {
     <p>Is loading: {{ isLoading }}</p>
     <pre>{{ user }}</pre>
   </div>
+  <pre>{{ config }} </pre>
 </template>
 
 <style scoped>
