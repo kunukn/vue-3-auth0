@@ -9,6 +9,10 @@ Vue 3 Auth0 demo app.
 
 ![app demo](./wiki/images/app-demo.png)
 
+## Auth flow in this demo.
+
+Authorize Code with PKCE.
+
 ## Prerequisite
 
 - You need to have an Auth0 app with Universal login experience.
