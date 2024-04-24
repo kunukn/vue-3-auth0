@@ -11,7 +11,9 @@ console.log(auth0Config)
 
 const app = createApp(App)
 
-app.use(createAuth0(auth0Config)).use(createRouter(app))
+// Router before Auth0
+// https://developer.auth0.com/resources/guides/spa/vue/basic-authentication#configure-a-vue-js-authentication-plugin
+app.use(createRouter(app)).use(createAuth0(auth0Config))
 
 app.mount('#app')
 
