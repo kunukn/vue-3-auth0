@@ -16,7 +16,7 @@ export default {
           },
           authorizationParams: {
             redirect_uri: `${self.location.origin}/auth-callback?uiMode=login`,
-            ui_locales: 'en', // Custom thing for me, you properly don't need this.
+            ui_locales: 'en', // Custom thing for me, optional.
           },
         })
       },
@@ -28,7 +28,7 @@ export default {
           authorizationParams: {
             redirect_uri: `${self.location.origin}/auth-callback?uiMode=signup`,
             screen_hint: 'signup', // https://auth0.com/docs/authenticate/login/auth0-universal-login/universal-login-vs-classic-login/universal-experience#signup
-            ui_locales: 'en', // Custom thing for me, you properly don't need this.
+            ui_locales: 'en', // Custom thing for me, optional.
           },
         })
       },
