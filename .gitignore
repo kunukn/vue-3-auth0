@@ -131,4 +131,6 @@ dist
 
 # Custom
 .cert
+auth_config.json
+auth_config.js
 

@@ -3,13 +3,15 @@ import './style.css'
 import App from '@/App.vue'
 import { createApp } from 'vue'
 import { createAuth0 } from '@auth0/auth0-vue'
-import router from './router'
+import { createRouter } from './router'
 
 const auth0Config = createAuthConfig()
 
 console.log(auth0Config)
 
-const app = createApp(App).use(createAuth0(auth0Config)).use(router)
+const app = createApp(App)
+
+app.use(createAuth0(auth0Config)).use(createRouter(app))
 
 app.mount('#app')
 
