@@ -2,6 +2,7 @@
   <div>
     <div>
       <h1>External API</h1>
+      <p>baseApiUrl: {{ baseApiUrl }}</p>
       <p>
         Call an external API by clicking the button below. This will call the
         external API using an access token, and the API will validate it using
@@ -37,6 +38,7 @@ export default {
       apiMessage,
       token,
       urlText,
+      baseApiUrl,
       async callUrl() {
         apiMessage.value = ''
         token.value = ''
