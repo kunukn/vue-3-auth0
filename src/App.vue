@@ -10,19 +10,17 @@ export default {
 
     const token = ref('')
 
-    watch(isAuthenticated, (newVal) => {
-      if (newVal) {
-        getAccessTokenSilently().then((t) => {
-          token.value = t
-        })
-      }
-    })
-
-    if (isAuthenticated) {
-      getAccessTokenSilently().then((t) => {
-        token.value = t
-      })
-    }
+    watch(
+      isAuthenticated,
+      (newVal) => {
+        if (newVal) {
+          getAccessTokenSilently().then((t) => {
+            token.value = t
+          })
+        }
+      },
+      { immediate: true }
+    )
 
     return {
       isLoading,
