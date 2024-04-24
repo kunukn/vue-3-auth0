@@ -8,18 +8,18 @@ export default {
     const { logout, isLoading, isAuthenticated, user, getAccessTokenSilently } =
       useAuth0()
 
-    let token = ref()
+    let token = ref('')
 
     if (isAuthenticated) {
       getAccessTokenSilently().then((t) => {
-        token.value = t
+        if(token) token.value = t
       })
     }
 
     watch(isAuthenticated, (newVal) => {
       if (newVal) {
         getAccessTokenSilently().then((t) => {
-          token.value = t
+          if(token) token.value = t
         })
       }
     })
