@@ -29,6 +29,9 @@ export default {
       token,
       config: createAuthConfig(),
       domain: import.meta.env.VITE_AUTH0_DOMAIN,
+      wellKnownUrl: `https://${
+        import.meta.env.VITE_AUTH0_DOMAIN
+      }/.well-known/openid-configuration`,
       clickLogout: () => {
         logout({
           logoutParams: {
@@ -61,6 +64,7 @@ export default {
     <RouterView />
   </main>
   <div>
+    <a :href="wellKnownUrl" target="_blank">openid-configuration</a>
     <p><b>State:</b></p>
     <p>Is logged in: {{ isAuthenticated }}</p>
     <p>Is loading: {{ isLoading }}</p>
@@ -68,6 +72,7 @@ export default {
     <pre>{{ JSON.stringify(user, null, 1) }}</pre>
   </div>
   <hr />
+  <a href="https://jwt.io" target="_blank">jwt.io</a>
   <p class="token"><b>Token:</b> {{ token }}</p>
   <hr />
   <p><b>Config:</b></p>
