@@ -15,7 +15,9 @@
     "create-cert-files-in-folder": "rm -rf .cert && mkdir .cert && npm run __create-cert-files",
     "__create-cert-files": "mkcert -key-file ./.cert/key.pem -cert-file ./.cert/cert.pem localhost",
     "create-cert-files-in-folder-external": "rm -rf .cert && mkdir .cert && npm run __create-cert-files-external",
-    "__create-cert-files-external": "mkcert -key-file ./.cert/key.pem -cert-file ./.cert/cert.pem 10.99.53.189"
+    "__create-cert-files-external": "mkcert -key-file ./.cert/key.pem -cert-file ./.cert/cert.pem 10.99.53.189",
+    "cleandist": "node node-tools/clean-dist.js",
+    "dist": "npx browser-sync dist -w --port 3000"
   },
   "engines": {
     "npm": ">=9",
