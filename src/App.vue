@@ -43,7 +43,7 @@ export default {
 
 <template>
   <h1>Vue 3 + Auth0 app</h1>
-  <p class="id-info">domain: {{ domain }}</p>
+  <p class="id-info mb-16px"><b>domain:</b> {{ domain }}</p>
   <p><strong>Current route path:</strong> {{ $route.fullPath }}</p>
   <p>
     Ensure the url match the one configured in Auth0 settings, i.e. correct
@@ -61,16 +61,17 @@ export default {
     <RouterView />
   </main>
   <div>
+    <p><b>State:</b></p>
     <p>Is logged in: {{ isAuthenticated }}</p>
     <p>Is loading: {{ isLoading }}</p>
     <p>User:</p>
-    <pre>{{ user }}</pre>
+    <pre>{{ JSON.stringify(user, null, 1) }}</pre>
   </div>
   <hr />
-  <p>Token: {{ token }}</p>
+  <p class="token"><b>Token:</b> {{ token }}</p>
   <hr />
-  <p>Config:</p>
-  <pre>{{ config }} </pre>
+  <p><b>Config:</b></p>
+  <pre>{{ JSON.stringify(config, null, 1) }}  </pre>
 </template>
 
 <style scoped>
@@ -92,5 +93,9 @@ button {
 
 pre {
   font-size: 14px;
+}
+
+.token {
+  word-break: break-all;
 }
 </style>

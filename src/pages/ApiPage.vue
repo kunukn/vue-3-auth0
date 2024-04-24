@@ -2,7 +2,7 @@
   <div>
     <div>
       <h1>External API</h1>
-      <p>baseApiUrl: {{ baseApiUrl }}</p>
+      <p><b>baseApiUrl:</b> {{ baseApiUrl }}</p>
       <p>
         Call an external API by clicking the button below. This will call the
         external API using an access token, and the API will validate it using
@@ -14,7 +14,7 @@
 
     <div>
       <h6>Result</h6>
-      <pre>{{ apiMessage }}</pre>
+      <pre>{{ JSON.stringify(apiMessage, null, 1) }} }}</pre>
       <hr />
       <p>{{ token }}</p>
     </div>
@@ -78,5 +78,9 @@ pre {
   padding-top: 16px;
   word-break: break-all;
   font-size: 14px;
+}
+
+p {
+  margin-bottom: 16px;
 }
 </style>
