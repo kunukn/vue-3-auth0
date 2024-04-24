@@ -15,8 +15,6 @@
     <div>
       <h6>Result</h6>
       <pre>{{ JSON.stringify(apiMessage, null, 1) }}</pre>
-      <hr />
-      <p>{{ token }}</p>
     </div>
   </div>
 </template>
