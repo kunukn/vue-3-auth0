@@ -12,7 +12,7 @@ export default {
       login: () => {
         loginWithRedirect({
           appState: {
-            target: self.location.pathname, // Take me here as final destination.
+            target: '/', // self.location.pathname, // Take me here as final destination.
           },
           authorizationParams: {
             redirect_uri: `${self.location.origin}/auth-callback?uiMode=login`,
@@ -23,7 +23,7 @@ export default {
       createAccount: () => {
         loginWithRedirect({
           appState: {
-            target: '/', // Take me there after login.
+            target: '/', // Take me here as final destination.
           },
           authorizationParams: {
             redirect_uri: `${self.location.origin}/auth-callback?uiMode=signup`,
