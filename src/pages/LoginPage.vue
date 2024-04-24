@@ -1,4 +1,5 @@
 <script>
+import { ref, watch } from 'vue'
 import { useAuth0 } from '@auth0/auth0-vue'
 
 export default {
@@ -9,6 +10,7 @@ export default {
       isLoading,
       isAuthenticated,
       user,
+      token,
       login: () => {
         loginWithRedirect({
           appState: {

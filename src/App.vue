@@ -1,15 +1,34 @@
 <script>
 import { useAuth0 } from '@auth0/auth0-vue'
 import { createAuthConfig } from './main.js'
+import { ref, watch } from 'vue'
 
 export default {
   setup() {
-    const { logout, isLoading, isAuthenticated, user } = useAuth0()
+    const { logout, isLoading, isAuthenticated, user, getAccessTokenSilently } =
+      useAuth0()
+
+    let token = ref()
+
+    if (isAuthenticated) {
+      getAccessTokenSilently().then((t) => {
+        token.value = t
+      })
+    }
+
+    watch(isAuthenticated, (newVal) => {
+      if (newVal) {
+        getAccessTokenSilently().then((t) => {
+          token.value = t
+        })
+      }
+    })
 
     return {
       isLoading,
       isAuthenticated,
       user,
+      token,
       config: createAuthConfig(),
       domain: import.meta.env.VITE_AUTH0_DOMAIN,
       clickLogout: () => {
@@ -49,6 +68,8 @@ export default {
     <p>User:</p>
     <pre>{{ user }}</pre>
   </div>
+  <hr />
+  <p>Token: {{ token }}</p>
   <hr />
   <p>Config:</p>
   <pre>{{ config }} </pre>
