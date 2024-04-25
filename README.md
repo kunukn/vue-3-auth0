@@ -1,4 +1,5 @@
 # vue-3-auth0
+
 Playground for Vue 3 + Auth0
 
 `@auth0/auth0-vue` is used.
@@ -8,6 +9,14 @@ Playground for Vue 3 + Auth0
 Vue 3 Auth0 demo app.
 
 ![app demo](./wiki/images/app-demo.png)
+
+## Demo
+
+<table>
+<tr><td>Url</td><td><a href="https://vue-3-auth0.vercel.app/login">vue-3-auth0/login</a></td></tr>
+<tr><td>Username</td><td>hello@world.com</td></tr>
+<tr><td>Password</td><td>H3lloworld!</td></tr>
+</table>
 
 ## Auth flow in this demo.
 
@@ -38,7 +47,6 @@ npm run create-cert-files-in-folder # Creates the localhost certificates.
 
 npm start # Starts the app using https. Done with your normal OS account.
 ```
-
 
 # Auth setup
 
