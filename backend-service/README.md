@@ -11,4 +11,6 @@ npm install
 npm start
 ```
 
+Go to `http://localhost:3001` and check that it is running.
+
 Then test using the API page from the frontend app.
