@@ -52,8 +52,8 @@ export default {
           })
 
           apiMessage.value = response.data
-        } catch (e) {
-          apiMessage.value = `Error: the server responded with '${e.response.status}: ${e.response.statusText}'`
+        } catch (err) {
+          apiMessage.value = `Error: the server responded with '${err.response.status}: ${err.response.statusText}'`
         }
       },
     }
