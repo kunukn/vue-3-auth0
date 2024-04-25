@@ -31,7 +31,7 @@ export default {
     const auth0 = useAuth0()
     const apiMessage = ref('')
     const token = ref('')
-    const urlText = ref('/appsettings')
+    const urlText = ref('/api/external')
     return {
       apiMessage,
       token,
