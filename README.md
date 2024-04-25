@@ -48,6 +48,8 @@ npm run create-cert-files-in-folder # Creates the localhost certificates.
 npm start # Starts the app using https. Done with your normal OS account.
 ```
 
+If you want to play with the API, then the `backend-service` needs to be started.
+
 # Auth setup
 
 https://auth0.com/
