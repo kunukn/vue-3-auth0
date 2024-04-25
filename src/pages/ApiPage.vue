@@ -2,7 +2,7 @@
   <div>
     <div>
       <h1>External API</h1>
-      <h2>!! Only works on localhost, not deployed to PROD.</h2>
+      <h3>!! Only works on localhost, not deployed to PROD.</h3>
       <p><b>baseApiUrl:</b> {{ baseApiUrl }}</p>
       <p>
         Call an external API by clicking the button below. This will call the
