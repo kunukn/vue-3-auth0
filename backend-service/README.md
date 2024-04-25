@@ -2,6 +2,9 @@
 
 ## Install steps:
 
+Create a `auth_config.json` file using the example file.
+Replace the values with your Auth0 config.
+
 ```bash
 npm install
 
